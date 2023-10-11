@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Primeiro from './primeiro';
+import Primeiro from './pages/primeiro';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Segundo from './pages/segundo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Primeiro />
-    <Primeiro />
-    <Primeiro />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Primeiro/>}/>
+        <Route path='segundo' element={<Segundo/>}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
